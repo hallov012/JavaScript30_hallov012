@@ -58,9 +58,27 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
+  function removeTransition(event) {
+    if (event.propertyName != 'transform') return // 아직 transform 상태일 때는 return, 이 코드를 안쓰면 총 6개의 transform massege를 볼 수 있음^^
+    event.target.classList.remove('playing')
+    console.log(event.propertyName)
+  }
+
+  function playSound(event) {
+    const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`)
+    const key = document.querySelector(`div[data-key="${event.keyCode}"]`)
+    if (!audio) return;  //최적화 관련, 지정되지 않은 key를 누를 땐 바로 function을 종료
+
+    key.classList.add('playing')
+    audio.currentTime = 0 //소리가 끝나기 전에 키를 눌러도 소리가 출력되도록 설정
+    audio.play()
+  }
+
+  const keys = Array.from(document.querySelectorAll('.key'))
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition))
+  document.addEventListener('keydown', playSound)
 
 </script>
-
 
 </body>
 </html>
