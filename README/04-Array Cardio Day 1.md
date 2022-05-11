@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Array Cardio 💪</title>
-</head>
-<body>
-  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
-  <script>
+## 04-Array Cardio Day 1
+
+### :cherries: 전체코드
+
+```javascript
+<script>
     // Get your shorts on - this is an array workout!
     // ## Array Cardio Day 1
 
@@ -96,5 +93,18 @@
     }, {})
     console.log(transportation)
   </script>
-</body>
-</html>
+```
+
+
+
+### `map()`
+
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+
+> * 배열 내의 모든 요소 각각에 대해 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환
+> * ```arr.map(callback(currentValue[, index[, array]])[, thisArg])```
+>   * `callback`: 새로운 배열 요소를 생성하는 함수로 밑의 인자를 가짐
+>   * `currentValue`: 처리할 현재 요소
+>   * `index` (optional): 처리할 현재 요소의 인덱스
+>   * `array` (optional): `map()`을 호출한 배열
+>   * `thisArg` (optional):  `callback`했을 때 `this`로 사용되는 값
